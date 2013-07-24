@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="org.scalamacros"
+		module="macros_2.11"
+		revision="1.0.0"
+		conf="runtime-internal"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom"
+		date="20130723231052"/>
+	<dependencies>
+		<module organisation="org.scala-lang.macro-paradise" name="scala-reflect">
+			<revision name="2.11.0-SNAPSHOT" status="integration" pubdate="20130721225238" resolver="sonatype-snapshots" artresolver="sonatype-snapshots" homepage="http://www.scala-lang.org/" downloaded="false" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="1">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html    "/>
+				<metadata-artifact status="no" details="" size="2741" time="0" location="C:\Users\tomas\.ivy2\cache\org.scala-lang.macro-paradise\scala-reflect\ivy-2.11.0-SNAPSHOT.xml" searched="true" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/macro-paradise/scala-reflect/2.11.0-SNAPSHOT/scala-reflect-2.11.0-20130722.015147-224.pom"/>
+				<caller organisation="org.scalamacros" name="macros_2.11" conf="optional, compile, runtime, runtime-internal" rev="2.11.0-SNAPSHOT" rev-constraint-default="2.11.0-SNAPSHOT" rev-constraint-dynamic="2.11.0-SNAPSHOT" callerrev="1.0.0"/>
+				<artifacts>
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="3449867" time="0" location="C:\Users\tomas\.ivy2\cache\org.scala-lang.macro-paradise\scala-reflect\jars\scala-reflect-2.11.0-SNAPSHOT.jar">
+						<origin-location is-local="false" location="https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/macro-paradise/scala-reflect/2.11.0-SNAPSHOT/scala-reflect-2.11.0-20130722.015147-224.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang.macro-paradise" name="scala-library">
+			<revision name="2.11.0-SNAPSHOT" status="integration" pubdate="20130721225157" resolver="sonatype-snapshots" artresolver="sonatype-snapshots" homepage="http://www.scala-lang.org/" downloaded="false" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="2">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
+				<metadata-artifact status="no" details="" size="2554" time="0" location="C:\Users\tomas\.ivy2\cache\org.scala-lang.macro-paradise\scala-library\ivy-2.11.0-SNAPSHOT.xml" searched="true" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/macro-paradise/scala-library/2.11.0-SNAPSHOT/scala-library-2.11.0-20130722.015147-224.pom"/>
+				<caller organisation="org.scala-lang.macro-paradise" name="scala-reflect" conf="default, compile, runtime, master" rev="2.11.0-SNAPSHOT" rev-constraint-default="2.11.0-SNAPSHOT" rev-constraint-dynamic="2.11.0-SNAPSHOT" callerrev="2.11.0-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="6830724" time="0" location="C:\Users\tomas\.ivy2\cache\org.scala-lang.macro-paradise\scala-library\jars\scala-library-2.11.0-SNAPSHOT.jar">
+						<origin-location is-local="false" location="https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/macro-paradise/scala-library/2.11.0-SNAPSHOT/scala-library-2.11.0-20130722.015147-224.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.11.0-SNAPSHOT" status="integration" pubdate="20130723224620" resolver="sonatype-snapshots" artresolver="sonatype-snapshots" homepage="http://www.scala-lang.org/" downloaded="false" searched="true" default="false" conf="default(compile), default, compile, runtime, master" position="0">
+				<license name="BSD-like" url="http://www.scala-lang.org/downloads/license.html          "/>
+				<metadata-artifact status="no" details="" size="2539" time="0" location="C:\Users\tomas\.ivy2\cache\org.scala-lang\scala-library\ivy-2.11.0-SNAPSHOT.xml" searched="true" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/snapshots/org/scala-lang/scala-library/2.11.0-SNAPSHOT/scala-library-2.11.0-20130724.014525-343.pom"/>
+				<caller organisation="org.scalamacros" name="macros_2.11" conf="optional, compile, runtime, runtime-internal" rev="2.11.0-SNAPSHOT" rev-constraint-default="2.11.0-SNAPSHOT" rev-constraint-dynamic="2.11.0-SNAPSHOT" callerrev="1.0.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

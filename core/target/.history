@@ -1,0 +1,10 @@
+compile
+run
+gen-idea
+run
+compile
+run
+clean
+run
+gen-idea
+exit
