@@ -40,6 +40,7 @@ object shelling {
   }
 
   def move(from: Path, to: Path) = Undoable(sh"mv '$from' '$to'", sh"mv '$to' '$from'")
+  def find(args: String): Seq[Path] = sh"find $args".stdout map (l => path(l))
   def path(arg: String, args: String*) = Paths.get(arg, args:_*)
 
   implicit class PathOps(val p: Path) extends AnyVal {
@@ -73,7 +74,7 @@ object shelling {
 }
 import shelling._
 
-val classes = path("").traverseBf.filter(_.toString contains "/classes/").to[IndexedSeq]
+val classes = find("-path '*/classes/*.class'")
 val javapsByExitCode = classes.par.map(p => p->sh"javap -c -p $p | grep -i box").seq.groupBy(_._2.exitCode)
 
 for {
