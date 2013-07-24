@@ -75,7 +75,7 @@ object shelling {
 import shelling._
 
 val classes = find("-path '*/classes/*.class'")
-val javapsByExitCode = classes.par.map(p => p->sh"javap -c -p $p | grep -i box").seq.groupBy(_._2.exitCode)
+val javapsByExitCode = classes.par.map(p => p->sh"javap -c -p $p | grep -i box | grep -v scala.runtime.BoxedUnit").seq.groupBy(_._2.exitCode)
 
 for {
   boxingClasses <- javapsByExitCode.get(0)

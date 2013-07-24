@@ -1,6 +1,6 @@
 package memory
 
-trait Memory[T] {
+trait Memory[@specialized T] {
   def update(i: Long, value: T): Unit
 
   def apply(i: Long): T
