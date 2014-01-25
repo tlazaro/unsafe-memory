@@ -23,11 +23,11 @@ class UnsafeByteArray(val size: Long) extends Memory[Byte] {
   def apply(idx: Long) = ScalaUnsafe.getUnsafe.getByte(address + idx * BYTE)
 
   def clear() {
-    var i = 0
-    while (i < size) {
-      update(i, 0)
-      i += 1
-    }
+    ScalaUnsafe.getUnsafe.setMemory(address, size * BYTE, 0)
+  }
+
+  def free() {
+    ScalaUnsafe.getUnsafe.freeMemory(address)
   }
 }
 
@@ -43,30 +43,31 @@ class UnsafeFloatArray(val size: Long, clean: Boolean = true) extends Memory[Flo
   def apply(idx: Long) = ScalaUnsafe.getUnsafe.getFloat(address + idx * FLOAT)
 
   def clear() {
-    var i = 0
-    while (i < size) {
-      update(i, 0)
-      i += 1
-    }
+    ScalaUnsafe.getUnsafe.setMemory(address, size * FLOAT, 0)
+  }
+
+  def free() {
+    ScalaUnsafe.getUnsafe.freeMemory(address)
   }
 }
 
 class UnsafeIntArray(val size: Long) extends Memory[Int] {
 
   import UnsafeArray._
+  import ScalaUnsafe._
 
-  val address = ScalaUnsafe.getUnsafe.allocateMemory(size * INT)
+  val address = getUnsafe.allocateMemory(size * INT)
 
-  def update(i: Long, value: Int): Unit = ScalaUnsafe.getUnsafe.putInt(address + i * INT, value)
+  def update(i: Long, value: Int): Unit = getUnsafe.putInt(address + i * INT, value)
 
-  def apply(idx: Long) = ScalaUnsafe.getUnsafe.getInt(address + idx * INT)
+  def apply(idx: Long) = getUnsafe.getInt(address + idx * INT)
 
   def clear() {
-    var i = 0
-    while (i < size) {
-      update(i, 0)
-      i += 1
-    }
+    getUnsafe.setMemory(address, size * INT, 0)
+  }
+
+  def free() {
+    getUnsafe.freeMemory(address)
   }
 }
 

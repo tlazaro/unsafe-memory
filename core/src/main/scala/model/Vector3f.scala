@@ -15,13 +15,13 @@ case class Vector3f(val ptr: Int) extends AnyVal {
 
   def z_=(value: Float)(implicit m: MemoryManager) = m(ptr + 2) = value
 
-  def :+(other: Vector3f)(implicit m1: MemoryManager) = {
+  def :+(other: Vector3f)(implicit m: MemoryManager) = {
     x_=(x + other.x)
     y_=(y + other.y)
     z_=(z + other.z)
   }
 
-  def +:(other: Vector3f)(implicit m1: MemoryManager) = this :+ other
+  def +:(other: Vector3f)(implicit m: MemoryManager) = this :+ other
 
   /** May come in handy for some type checking. Forcing the user to signal when passing as a pointer. */
   def unary_~ = Vector3fPtr(ptr)
@@ -45,8 +45,7 @@ final class Vector3fArray(val ptr: Int, var length: Int) {
     m(ptr + i * 3 + 2) = z
   }
 
-  def update(i: Int, vptr: Int)(implicit m: MemoryManager): Unit = {
-    val v = Vector3f(vptr)
+  def update(i: Int, v: Vector3f)(implicit m: MemoryManager): Unit = {
     update(i, v.x, v.y, v.z)
   }
 }
